@@ -27,13 +27,7 @@ if (isset($_GET['logout'])) {
  */
 
 if (isset($_SESSION['guilds'])) {
-    echo "<h1>Welcome, " . htmlspecialchars($_SESSION['user']['username']) . "!</h1>";
-    echo "<h2>Your Servers:</h2><ul>";
-    foreach ($_SESSION['guilds'] as $guild) {
-        echo "<li>" . htmlspecialchars($guild['name']) . "</li>";
-    }
-    echo "</ul><a href='?logout=true'>Logout</a>";
-    exit;
+    $authenticated = true;
 }
 
 $params = [
@@ -127,6 +121,20 @@ if (isset($_GET['code'])) {
         <h1 class="navbar__title"><a href="/">perodex</a></h1>
     </nav>
     <main class="container">
+
+        <?php if (isset($authenticated)): ?>
+            <h1>Welcome, <?= htmlspecialchars($_SESSION['user']['username']) ?></h1>
+            <h2>Your servers:</h2>
+
+            <ul>
+                <?php foreach ($_SESSION['guilds'] as $guild): ?>
+                    <li><?= htmlspecialchars($guild['name']) ?></li>
+                <?php endforeach; ?>
+            </ul>
+
+            <a href="/?logout=true">Logout</a>
+
+        <?php else: ?>
         <section class="hero">
             <p class="hero__description">A digital assets exchange platform</p>
             <p class="hero__tagline">All your trades. One dashboard.</p>
@@ -135,6 +143,8 @@ if (isset($_GET['code'])) {
                 <span>Login with Discord</span>
             </a>
         </section>
+        <?php endif; ?>
+
     </main>
     <footer class="footer">
         <ul class="m-0 p-0 footer__links">
