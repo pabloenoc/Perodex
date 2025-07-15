@@ -114,4 +114,39 @@ if (isset($_GET['code'])) {
 
 ?>
 
-<a href="<?= $authorizeUrl ?>">Login with Discord</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perodex</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="navbar__title"><a href="/">perodex</a></h1>
+    </nav>
+    <main class="container">
+        <section class="hero">
+            <p class="hero__description">A digital assets exchange platform</p>
+            <p class="hero__tagline">All your trades. One dashboard.</p>
+            <a href="<?= $authorizeUrl ?>" class="hero__login">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Frepository-images.githubusercontent.com%2F486722660%2F7ef9a610-b65a-48b7-ba4a-f4da081b90ad&f=1&nofb=1&ipt=d89c4719829bbb0d6ed3eaa4e08c305b4e3df76da58a47aaccf7e522f182c994" alt="Discord Logo">
+                <span>Login with Discord</span>
+            </a>
+        </section>
+    </main>
+    <footer class="footer">
+        <ul class="m-0 p-0 footer__links">
+            <li class="m-0 p-0"><a href="/">About</a></li>
+            <li class="m-0 p-0"><a href="/">Privacy Policy</a></li>
+            <li class="m-0 p-0"><a href="/">Terms of Service</a></li>
+            <li class="m-0 p-0"><a href="/">Contact</a></li>
+            <li class="m-0 p-0"><a href="/">Changelog</a></li>
+        </ul>
+        <p class="footer__copyright"><small>&copy; <?= date('Y') ?> Perodex. All rights reserved.</small></p>
+    </footer>
+</body>
+</html>
+
+

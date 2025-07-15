@@ -1,0 +1,127 @@
+/* inter-latin-wght-normal */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+:root {
+    --color-bg: rgb(31, 36, 55);
+    --color-white: #f3f3f3;
+    --color-lightgray: rgb(189, 189, 189);
+    --color-orange: salmon;
+    --color-charcoal: rgb(32, 32, 32);
+}
+
+/* Utilities */
+.m-0 {
+    margin: 0;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+body {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg);
+    font-family: 'Inter Variable';
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    /* background-color: var(--color-orange); */
+    padding: 1rem;
+}
+
+.navbar__title {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+
+    & a {
+        text-decoration: none;
+        color: var(--color-white);
+    }
+}
+
+.container {
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+.hero {
+    margin-top: 15dvh;
+    text-align: center;
+    /* background-color: rgb(73, 12, 88); */
+}
+
+.hero__description {
+    margin-block: 2rem 0rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-white);
+}
+
+.hero__tagline {
+    margin-block: 1rem;
+    font-size: 1.5rem;
+    color: var(--color-lightgray);
+}
+
+.hero__login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-inline: auto;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    background-color: rgb(88 101 242);
+    color: var(--color-white);
+    text-decoration: none;
+
+    & img {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+.footer {
+    color: var(--color-lightgray);
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.80rem;
+}
+
+.footer__links {
+    max-width: 60%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & li {
+        list-style: none;
+    }
+
+    & li > a {
+        color: var(--color-lightgray);
+        text-decoration: none;
+        
+    }
+}
+
+@media screen and (min-width: 620px) {
+    .footer__links {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+}
